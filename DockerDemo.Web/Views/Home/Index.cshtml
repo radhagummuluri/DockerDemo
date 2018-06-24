@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model DockerDemo.Web.Models.HomeModel;
+<div class="row">
+    @if (Model.IsContainer)
+    {
+        <div class="col-sm-6 col-sm-offset-3 customFont" style="margin-top:20px;margin-bottom:20px;font-weight:bold;font-size: 20px !important;font-family: Roboto Bold !important;">Accessing the DockerDemo website hosted in a container with id @Model.MyId</div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3" style="margin-top:20px;margin-bottom:20px;">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item center-block active">
+                            <img src="https://http.cat/200" alt="OK" class="img-responsive" />
+                        </div>
+                        <div class="item center-block">
+                            <img src="https://http.cat/429" alt="Too many requests" class="img-responsive" />
+                        </div>
+                        <div class="item center-block">
+                            <img src="https://http.cat/204" alt="No Content" class="img-responsive" />
+                        </div>
+                        <div class="item center-block">
+                            <img src="https://http.cat/301" alt="Moved Permanently" class="img-responsive" />
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="col-sm-6 col-sm-offset-3 customFont" style="margin-top:20px;margin-bottom:20px;font-weight:bold;font-size: 20px !important;font-family: Roboto Bold !important;">Accessing the DockerDemo website hosted on @Model.MyId</div>
+    }
+</div>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3 customFont" style="margin-top:20px;margin-bottom:20px;font-weight:bold;font-size: 20px !important;font-family: Roboto Bold !important;">DockerDemoApi returned the string: <br /> @Model.MessageFromApi</div>
+</div>
